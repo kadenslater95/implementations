@@ -12,7 +12,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g")
 
-#include_directories(src/include)
 include_directories(include)
 
 #file(GLOB LIB_SOURCES src/lib/*.c)
@@ -20,6 +19,9 @@ include_directories(include)
 #add_library(implementations STATIC LIB_SOURCES)
 #add_library(implementations SHARED src/lib/linked_list.c)
 add_library(implementations SHARED src/data_structures/linked_list.c)
+
+add_executable(example example.c)
+target_link_libraries(example implementations)
 
 
 # Add test subdirectory if this isn't the Release build
