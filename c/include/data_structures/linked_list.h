@@ -1,6 +1,6 @@
 
 /**
- * @copyright  Copyright (C) 2024 Kaden Slater. All Rights Reserved. 
+ * @copyright  Copyright (C) 2024 Kaden Slater. All Rights Reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -21,14 +21,13 @@ typedef struct int_llnode {
 } int_llnode;
 
 
-/*
- * Given the current tail, adds the new_node to the list and sets it as the current tail, 
- * or allocates the tail if nil.
- * 
- * @param tail [int_llnode *] pointer to current tail node, or nil
- * @param value [int] pointer to new tail node
-*/
-void add_node(int_llnode **tail, int value);
+void add_llnode(int_llnode **tail, int value);
+
+void remove_llnode(int_llnode **head, int value);
+
+void clear_llnode(int_llnode **head);
+
+void print_llnode(int_llnode *head);
 
 
 #ifdef __cplusplus
