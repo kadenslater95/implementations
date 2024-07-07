@@ -33,33 +33,50 @@ void add_llnode(int_llnode **tail, int value) {
 /**
  * Given the current head and a value, it iterates through the linked_list and removes the first occurence of the
  * value if it is found, and re-addresses the head if needed.
+ * Note: If you keep track of the tail (for speed) then you should pass that reference with calls to
+ * this method so that it gets updated appropriately if the value being removed is in the tail.
  *
  * @param head [int_llnode **] pointer to current head node's pointer
+ * @param tail [int_llnode **] pointer to current tail
  * @param value [int] value to find first occurence of to determine node to remove
 */
-void remove_llnode(int_llnode **head, int value) {
-    if (!head) {
-        return;
-    }
+void remove_llnode(int_llnode **head, int_llnode **tail, int value) {
+  if (!head) {
+    return;
+  }
 
-    int_llnode *current = *head;
-    int_llnode *prev = NULL;
-    while (current) {
-        if (current->value == value) {
-            if (prev) {
-                prev->next = current->next;
-            } else {
-                *head = current->next;
-            }
+  int_llnode *current = *head;
+  int_llnode *prev = NULL;
+  while (current) {
+    if (current->value == value) {
+      if (prev) {
+        prev->next = current->next;
 
-            free(current);
-
-            return;
+        // If the node getting removed is the tail, then update the tail
+        // reference to be the node before it
+        if ( !(current->next) ) {
+          *tail = prev;
         }
+      } else {
+        // Note: This handles setting head to null if it was the only item
+        // in the list, which makes an "if (head)" check fail as expected
+        *head = current->next;
 
-        prev = current;
-        current = prev->next;
+        // If this was the only node in the list, then update the tail
+        // to null so that "if (tail)" checks will fail
+        if (tail && !(current->next)) {
+          *tail = NULL;
+        }
+      }
+
+      free(current);
+
+      return;
     }
+
+    prev = current;
+    current = prev->next;
+  }
 }
 
 
@@ -77,6 +94,9 @@ void clear_llnode(int_llnode **head) {
 
         free(prev);
     }
+
+    // Have to set head to null because free alone just makes the memory
+    // accessible again but won't make an "if (head)" check fail
     *head = NULL;
 }
 

@@ -10,53 +10,53 @@
 #include "data_structures/linked_list.h"
 
 int main(int argc, char **argv) {
-    int_llnode *head = NULL;
-    int_llnode *tail = NULL;
+  int_llnode *head = NULL;
+  int_llnode *tail = NULL;
 
-    add_llnode(&head, 1);
-    tail = head;
-    add_llnode(&tail, 2);
-    add_llnode(&tail, 3);
+  add_llnode(&head, 1);
+  tail = head;
+  add_llnode(&tail, 2);
+  add_llnode(&tail, 3);
 
-    printf("Full List\n");
-    print_llnode(head);
+  printf("Full List\n");
+  print_llnode(head);
 
-    remove_llnode(&head, 2);
+  remove_llnode(&head, &tail, 2);
 
-    printf("\nThis time will remove 2\n");
-    print_llnode(head);
+  printf("\nThis time will remove 2\n");
+  print_llnode(head);
 
-    remove_llnode(&head, 2);
+  remove_llnode(&head, &tail, 2);
 
-    printf("\nThis time won't remove anything\n");
-    print_llnode(head);
+  printf("\nThis time won't remove anything\n");
+  print_llnode(head);
 
-    remove_llnode(&head, 1);
+  remove_llnode(&head, &tail, 1);
 
-    printf("\nThis time will remove 1\n");
-    print_llnode(head);
+  printf("\nThis time will remove 1\n");
+  print_llnode(head);
 
-    remove_llnode(&head, 3);
+  remove_llnode(&head, &tail, 3);
 
-    printf("\nThis time will remove 3\n");
-    print_llnode(head);
+  printf("\nThis time will remove 3\n");
+  print_llnode(head);
 
-    remove_llnode(&head, 5);
-    printf("\nThis time won't remove anything\n");
-    print_llnode(head);
+  remove_llnode(&head, &tail, 5);
+  printf("\nThis time won't remove anything\n");
+  print_llnode(head);
 
-    add_llnode(&head, 1);
-    tail = head;
-    add_llnode(&tail, 2);
-    add_llnode(&tail, 3);
+  add_llnode(&head, 1);
+  tail = head;
+  add_llnode(&tail, 2);
+  add_llnode(&tail, 3);
 
-    printf("\nShould all be added back\n");
-    print_llnode(head);
+  printf("\nShould all be added back\n");
+  print_llnode(head);
 
-    clear_llnode(&head);
+  clear_llnode(&head);
 
-    printf("\nShould be cleared out\n");
-    print_llnode(head);
+  printf("\nShould be cleared out\n");
+  print_llnode(head);
 
-    return 0;
+  return 0;
 }

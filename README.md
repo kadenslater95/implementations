@@ -19,7 +19,7 @@ cmake --build build
 ```
 
 ## Usage
-. . . debug (includes test builds) subfolder . . . release subfolder . . .
+. . . see example.c . . .
 
 ## Testing
 After building, run the following from the c project root.
@@ -31,4 +31,10 @@ build/test/implementation_tests
 Run the following from the c project root. Refer to [Google Style Guide](https://google.github.io/styleguide/cppguide.html) for any errors that come back. Errors are given a certainty scale from 1 to 5 with 5 being most certain.
 ```
 cpplint --recursive src include test
+```
+
+## Documentation
+To build the documentation after making changes, run the following rom the c project root.
+```
+doxygen Doxyfile
 ```

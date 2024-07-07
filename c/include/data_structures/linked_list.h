@@ -23,7 +23,7 @@ typedef struct int_llnode {
 
 void add_llnode(int_llnode **tail, int value);
 
-void remove_llnode(int_llnode **head, int value);
+void remove_llnode(int_llnode **head, int_llnode **, int value);
 
 void clear_llnode(int_llnode **head);
 
