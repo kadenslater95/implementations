@@ -83,9 +83,10 @@ void remove_llnode(int_llnode **head, int_llnode **tail, int value) {
 /**
  * Given the current head, it iterates through the linked_list and calls free on all the nodes
  *
- * @param head [int_llnode *] pointer to current head node's pointer
+ * @param head [int_llnode **] pointer to current head node's pointer
+ * @param tail [int_llnode **] pointer to current tail node's pointer
 */
-void clear_llnode(int_llnode **head) {
+void clear_llnode(int_llnode **head, int_llnode **tail) {
     int_llnode *current = *head;
     int_llnode *prev = NULL;
     while (current) {
@@ -97,7 +98,12 @@ void clear_llnode(int_llnode **head) {
 
     // Have to set head to null because free alone just makes the memory
     // accessible again but won't make an "if (head)" check fail
-    *head = NULL;
+    if (head) {
+      *head = NULL;
+    }
+    if (tail) {
+      *tail = NULL;
+    }
 }
 
 

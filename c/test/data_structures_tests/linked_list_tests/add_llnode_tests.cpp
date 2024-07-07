@@ -73,6 +73,6 @@ TEST(AddLLNodeTest, NextPreviousTail) {
   EXPECT_EQ(tail->value, 3);
 
   if (head) {
-      clear_llnode(&head);
+      clear_llnode(&head, &tail);
   }
 }

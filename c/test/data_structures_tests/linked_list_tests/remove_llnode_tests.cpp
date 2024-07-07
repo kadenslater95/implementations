@@ -50,7 +50,7 @@ TEST(RemoveLLNodeTest, RemoveNonExistantValue) {
   EXPECT_EQ(current, tail);
 
   if (head) {
-      clear_llnode(&head);
+      clear_llnode(&head, &tail);
   }
 }
 
@@ -90,7 +90,7 @@ TEST(RemoveLLNodeTest, UpdatesHeadIfRemoved) {
   EXPECT_EQ(head->next, tail);
 
   if (head) {
-      clear_llnode(&head);
+      clear_llnode(&head, &tail);
   }
 }
 
@@ -114,7 +114,7 @@ TEST(RemoveLLNodeTest, RemoveFromMiddle) {
   EXPECT_FALSE(tail->next);
 
   if (head) {
-      clear_llnode(&head);
+      clear_llnode(&head, &tail);
   }
 }
 
@@ -139,6 +139,6 @@ TEST(RemoveLLNodeTest, UpdatesTailIfRemoved) {
   EXPECT_FALSE(tail->next);
 
   if (head) {
-      clear_llnode(&head);
+      clear_llnode(&head, &tail);
   }
 }
