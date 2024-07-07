@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
   printf("\nShould all be added back\n");
   print_llnode(head);
 
-  clear_llnode(&head);
+  clear_llnode(&head, &tail);
 
   printf("\nShould be cleared out\n");
   print_llnode(head);
