@@ -17,10 +17,10 @@ link_libraries(
 
 include(GoogleTest)
 
-# Declare a single test executable at this top level instead of multiple at lower levels
 add_executable(
   implementations_tests
-  data_structures_tests/linked_list_tests.cpp
+  data_structures_tests/linked_list_tests/add_llnode_tests.cpp
+  data_structures_tests/linked_list_tests/remove_llnode_tests.cpp
 )
 
 gtest_discover_tests(implementations_tests)

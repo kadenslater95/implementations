@@ -11,8 +11,10 @@
 #include "data_structures/linked_list.h"
 
 
-// Tests that when there isn't any tail yet it creates one
-TEST(AddTest, CreatesTail) {
+/*
+  Tests that when there isn't any tail yet it creates one
+*/
+TEST(AddLLNodeTest, CreatesTail) {
   int_llnode *tail = NULL;
 
   add_llnode(&tail, 1);
@@ -28,7 +30,7 @@ TEST(AddTest, CreatesTail) {
   Tests that when the tail is the head, the tail becomes a different after
   the addition
 */
-TEST(AddTest, HeadTailSeparation) {
+TEST(AddLLNodeTest, HeadTailSeparation) {
   int_llnode *head = NULL;
   int_llnode *tail = NULL;
 
@@ -52,7 +54,7 @@ TEST(AddTest, HeadTailSeparation) {
   Tests that when the tail and head are already separated, the tail then becomes the next of the
   previous tail
 */
-TEST(AddTest, NextPreviousTail) {
+TEST(AddLLNodeTest, NextPreviousTail) {
   int_llnode *head = NULL;
   int_llnode *tail = NULL;
 
