@@ -2,5 +2,5 @@
 // CMake output
 build
 
-// Doxygen generated folder, currently only care about the html generated documentation
-latex
+// Don't track the docs
+docs
