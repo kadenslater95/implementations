@@ -47,3 +47,30 @@ TEST(AddTest, HeadTailSeparation) {
     free(tail);
   }
 }
+
+/*
+  Tests that when the tail and head are already separated, the tail then becomes the next of the
+  previous tail
+*/
+TEST(AddTest, NextPreviousTail) {
+  int_llnode *head = NULL;
+  int_llnode *tail = NULL;
+
+  add_llnode(&head, 1);
+  tail = head;
+
+  add_llnode(&tail, 2);
+
+  int_llnode *prev_tail = tail;
+
+  add_llnode(&tail, 3);
+
+  EXPECT_EQ(prev_tail->value, 2);
+  EXPECT_EQ(prev_tail->next, tail);
+
+  EXPECT_EQ(tail->value, 3);
+
+  if (head) {
+      clear_llnode(&head);
+  }
+}
