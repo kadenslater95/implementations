@@ -9,7 +9,7 @@
 
 #include <gtest/gtest.h>
 
-#include "data_structures/linked_list.h"
+#include "data_structures/lists/linked_list.h"
 
 
 /*

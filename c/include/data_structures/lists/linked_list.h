@@ -5,8 +5,8 @@
  */
 
 // Some things cannot be extern'd so you need to use an include guard
-#ifndef C_INCLUDE_DATA_STRUCTURES_LINKED_LIST_H_
-#define C_INCLUDE_DATA_STRUCTURES_LINKED_LIST_H_
+#ifndef C_INCLUDE_DATA_STRUCTURES_LISTS_LINKED_LIST_H_
+#define C_INCLUDE_DATA_STRUCTURES_LISTS_LINKED_LIST_H_
 
 // Make this C library callable from C++
 #ifdef __cplusplus
@@ -34,4 +34,4 @@ void print_llnode(int_llnode *head);
 }
 #endif  // __cplusplus
 
-#endif  // C_INCLUDE_DATA_STRUCTURES_LINKED_LIST_H_
+#endif  // C_INCLUDE_DATA_STRUCTURES_LISTS_LINKED_LIST_H_
