@@ -18,7 +18,7 @@ include_directories(include)
 #add_library(implementations SHARED LIB_SOURCES)
 #add_library(implementations STATIC LIB_SOURCES)
 #add_library(implementations SHARED src/lib/linked_list.c)
-add_library(implementations SHARED src/data_structures/linked_list.c)
+add_library(implementations SHARED src/data_structures/lists/linked_list.c)
 
 add_executable(example example.c)
 target_link_libraries(example implementations)
